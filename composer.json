@@ -1,0 +1,21 @@
+{
+    "name": "nspyke/objectivemanager",
+    "description": "ROI calcualtor",
+    "authors": [
+        {
+            "name": "Nik Spijkerman",
+            "email": "nikspijkerman@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/http-foundation": "~2.7",
+        "silex/silex": "^1.3",
+        "twig/twig": "^1.18"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.7"
+    },
+    "autoload": {
+      "psr-0": {"": "src/"}
+    }
+}

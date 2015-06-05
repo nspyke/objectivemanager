@@ -1,0 +1,26 @@
+{% extends 'base.twig' %}
+{% block content %}
+<fieldset class="results">
+    <legend>Results</legend>
+
+    <p><strong>Reduce under performance.</strong>
+        Your saving is: £{{ calc.calculateUnderPerformance() | number_format }}</p>
+
+    <p><strong>Reduce attrition costs.</strong>
+        Assuming an average salary of £25,000 we will save you: £{{ calc.calculateAttritionCost() | number_format }}</p>
+
+    <p><strong>Fewer wasted chargeable hours.</strong>
+        You could save £{{ calc.calculateWastedChargeableHours() | number_format }} for your fee earners</p>
+
+    <p><strong>Fewer wasted administration hours.</strong>
+        We can save you: £{{ calc.calculateAdminHours() | number_format }}</p>
+
+    <hr/>
+
+    <p><strong>Total:</strong> £{{ calc.calculateTotal() | number_format }}</p>
+
+    <p><strong>Typical cost of implementation:</strong> £20,000</p>
+
+    <p>Your return on investment in the first year will be £{{ calc.calculateReturnOnInvestment() | number_format }}</p>
+</fieldset>
+{% endblock %}

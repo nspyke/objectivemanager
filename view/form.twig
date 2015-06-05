@@ -1,0 +1,81 @@
+{% extends 'base.twig' %}
+{% block content %}
+{% if valid is defined and not valid %}
+    <p class="error">Input is invalid or empty</p>
+{% endif %}
+<form action="/results" method="post">
+    <table>
+        <tbody>
+        <tr>
+            <th>How many employees are there in your organisation?</th>
+            <td class="mid-column">#</td>
+            <td class="right-column">
+                <input type="number" name="number_employees" value="{{ input.number_employees }}"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" class="description">
+                <p>Reduce under performance: Every organisation has a number of under-performers. The real challenge is to identify under-performance and then deal with it appropriately (either by improving Potential Benefit or headcount) We will help you identify underperformers quickly. Typically, 10% of an organisation's employees will underperform.</p>
+                <p>Our software will typically identify your underachievers within the first 3 months.</p>
+            </td>
+        </tr>
+        <tr>
+            <th>What is your average cost per employee for under-performance?</th>
+            <td class="mid-column">£</td>
+            <td class="right-column">
+                <input type="number" name="cost_per_employee" value="{{ input.cost_per_employee }}"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" class="description">
+                Nowadays, people expect to be valued, developed and given regular feedback. If people are not managed effectively or rewarded appropriately, they will leave. In professional
+                services, this cost is much higher due to the higher average salaries, amount of training invested, client relationships built and the high cost of recruiting new people. Typically, an organisation will pay 17% attrition costs over and above the employee's salary.
+            </td>
+        </tr>
+        <tr>
+            <th>What is the attrition rate of your organisation?</th>
+            <td class="mid-column">%</td>
+            <td class="right-column">
+                <input type="number" name="attrition_rate" value="{{ input.attrition_rate }}"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3" class="description">
+                <p>We enable the removal of paper based processes and the high administrative burden for Fee Earners. ObjectiveManager transitions objective setting from a once yearly ‘paperwork exercise’ to a way of working, increasing focus on key business goals. If every Fee-Earner saved just 2 hours per annum, they can employ that time more effectively.</p>
+                <p>What if your fee-earners re-gained just 2 chargeable hours each (@£150hr) every year?</p>
+            </td>
+        </tr>
+        <tr>
+            <th>What percentage of your employees are fee earners?</th>
+            <td class="mid-column">%</td>
+            <td class="right-column">
+                <input type="number" name="fee_earners" value="{{ input.fee_earners }}"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3" class="description">
+                The average cost of one HR Officer’s time running and collating paper based systems for
+                up to 500 people is £7,800. This figure, we know is very conservative and tends to be
+                much higher in professional services firms where the review process can be
+                challenging and iterative.
+            </td>
+        </tr>
+        <tr>
+            <th>What is the size of your HR department?</th>
+            <td class="mid-column">#</td>
+            <td class="right-column">
+                <input type="number" name="size_of_hr_dept" value="{{ input.size_of_hr_dept }}"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                <button type="submit">Calculate</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+{% endblock %}
